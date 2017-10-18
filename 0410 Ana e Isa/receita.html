@@ -1,0 +1,46 @@
+<!doctype>
+<html>
+	<head>
+	<link rel="stylesheet" href="css.css"/>
+	<script src="./js/jquery.min.js"></script>
+		<script>
+			$(function(){
+				var array = "http://botanicapp.com.br/receitas_teste.php";
+				var $xhr= $.get(array);
+				
+					$xhr.done(function(array){
+					var receitas= JSON.parse(array);
+					console.log(receitas);
+						$.each(receitas,function(indice,receita){
+							$ul1= $("<ul/>");// lista adicionando cada ingrediente
+							$ul2= $("<ul/>");
+								$.each(receita.ingredientes,function(indice,ingredientes){
+									$ul1.append($("<li/>").text(ingredientes))
+								});
+								
+								$.each(receita.preparo,function(indice,preparo){
+									$ul2.append($("<li/>").text(preparo))
+								});
+						$("#resultado")
+							.append($("<h2/>").text(receita.nome))
+							.append($("<img/>").attr("src",receita.foto))
+							.append($("<p/>").text(receita.descricao).text("Ingredientes"))
+							.append($ul1)
+							.append($ul2);
+							console.log(receitas);
+						});
+
+					});
+			});
+		
+		</script>
+	</head>
+<body>
+	<div id="resultado">
+	<h1>CEFET Receitas</h1>
+	<h2></h2>
+	</div>
+
+
+</body>
+</html>
