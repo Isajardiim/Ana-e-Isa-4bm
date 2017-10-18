@@ -1,0 +1,30 @@
+body{
+	background: url("https://image.freepik.com/free-vector/colorful-abstract-background-with-squares_1035-3033.jpg") no-repeat;
+	background-size:100%;
+	font-family:Lobster, cursive;
+	color: #C71585;
+}
+
+.form:hover{
+	border: 3px solid #C71585;
+	background-color: #FFF;
+	margin-top: 30px;
+	margin-left:40px;
+	width: 50%;
+	border-radius:10px;
+	text-align:center;
+}
+*{
+	font-size:35px;
+}
+.nome, .senha{
+margin-right:20px;
+margin-top:30px;
+
+}
+.alert{
+	width:714px;
+	margin-right:20px;
+	margin-top:30px;
+	text-align:center;
+}
